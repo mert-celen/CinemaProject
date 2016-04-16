@@ -14,7 +14,7 @@ include "getters.php";
 
         $connection = new mysqli($server, $username, $password,$database);
         if ($connection->connect_error)
-            die("Connection failed: " . $connection->connect_error);
+            return false;
         $query = "select * from movies ORDER by dateAdded DESC ;";
         $movies = $connection->query($query);
     }

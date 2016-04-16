@@ -3,7 +3,11 @@
 $flag = false;
 include "resources/php/functions.php";
 ob_start();
-connect_db();
+$isConnected = connect_db();
+if(!$isConnected){
+    echo "<meta http-equiv='refresh' content='0;url=setup/index.php'>";
+    die();
+}
 //Check if db is correct or not
 $result = $connection->query("show tables;");
 if($result->num_rows==0){
