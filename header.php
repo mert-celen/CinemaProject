@@ -4,7 +4,7 @@ $flag = false;
 include "resources/php/functions.php";
 ob_start();
 $isConnected = connect_db();
-if(!$isConnected){
+if($isConnected){
     echo "<meta http-equiv='refresh' content='0;url=setup/index.php'>";
     die();
 }

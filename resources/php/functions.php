@@ -11,10 +11,10 @@ include "getters.php";
         global $database;
         global $connection;
         global $movies;
-
         $connection = new mysqli($server, $username, $password,$database);
-        if ($connection->connect_error)
+        if ($connection->connect_error){
             return false;
+        }
         $query = "select * from movies ORDER by dateAdded DESC ;";
         $movies = $connection->query($query);
     }
