@@ -39,11 +39,6 @@ VALUES('$Title','$Year','$Runtime','$Genre','$Plot','$Actors','$imdbRating','$Me
     if(!file_exists("resources/img/$Title")){
         mkdir("resources/img/$Title/",700,true);
     }
-//  permissions...
-    chmod("resources/img/", 0700);
-    chmod("resources/img/Stars", 0700);
-    chmod("setup/index.php", 0700);
-    chmod("resources/php/functions.php", 0700);
 
     for($i=0;$i<count($Actors2);$i++){
         if(!file_exists("resources/img/Stars/" . $Actors2[$i])){

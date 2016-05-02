@@ -268,5 +268,4 @@ include "getters.php";
         }
         $connection->query($str);
     }
-
 ?>

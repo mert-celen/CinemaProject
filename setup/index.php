@@ -78,6 +78,12 @@ ob_start();
 //  logging in admin, setting cookies
   setcookie("username",$_POST["adminUsername"],time()+300);
   setcookie("password",md5($_POST["adminPassword"]),time()+300);
+  //  permissions...
+  chmod("resources/img/", 700);
+  chmod("resources/img/Stars", 700);
+  chmod("setup/index.php", 700);
+  chmod("resources/php/functions.php", 700);
+// end of permisions
   echo "<meta http-equiv='refresh' content='0;url=done.html'>";
   file_put_contents("index.php","There' some error in tables.You can't use setup to recreate tables. Setup meant to be run only once for security, fix database issues yourself.
   <br>Ps: You can still download this file from source and re-use setup. Just don't forget it will wipe ALL data");
