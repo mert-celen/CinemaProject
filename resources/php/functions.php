@@ -162,10 +162,14 @@ include "getters.php";
 
     function isUserAdmin($username){
         global $connection;
-        $query = "select * from users where username='" . $username . "' and type=2";
-        $result = $connection->query($query);
-        if($result->num_rows >0){
-            return true;
+        if(isset($_COOKIE['username'])){
+            $query = "select * from users where username='" . $username . "' and type=2";
+            $result = $connection->query($query);
+            if($result->num_rows >0){
+                return true;
+            }else{
+                return false;
+            }
         }else{
             return false;
         }

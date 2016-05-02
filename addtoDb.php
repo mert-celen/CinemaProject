@@ -32,7 +32,13 @@ VALUES('$Title','$Year','$Runtime','$Genre','$Plot','$Actors','$imdbRating','$Me
     $result = $connection->query($str);
 //  download actor images
     $Actors2 = split(",",$Actors);
-    mkdir("resources/img/Stars/", 0777, true);
+//  delete if directory exist
+    if (!file_exists("resources/img/Stars/")) {
+        mkdir("resources/img/Stars/", 700, true);
+    }
+    if(!file_exists("resources/img/$Title")){
+        mkdir("resources/img/$Title/",700,true);
+    }
     for($i=0;$i<count($Actors2);$i++){
         if(!file_exists("resources/img/Stars/" . $Actors2[$i])){
             file_put_contents("resources/img/Stars/" .$Actors2[$i] . ".jpg", file_get_contents(getProfilePic($Actors2[$i])));
