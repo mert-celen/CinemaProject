@@ -1,4 +1,8 @@
 <?php
+chmod("resources/img/", 777);
+chmod("resources/img/Stars", 777);
+chmod("setup/index.php", 777);
+chmod("resources/php/functions.php", 777);
 ob_start();
  if(isset($_POST["writeFile"])){
      $res = "
@@ -79,10 +83,7 @@ ob_start();
   setcookie("username",$_POST["adminUsername"],time()+300);
   setcookie("password",md5($_POST["adminPassword"]),time()+300);
   //  permissions...
-  chmod("resources/img/", 700);
-  chmod("resources/img/Stars", 700);
-  chmod("setup/index.php", 700);
-  chmod("resources/php/functions.php", 700);
+
 // end of permisions
   echo "<meta http-equiv='refresh' content='0;url=done.html'>";
   file_put_contents("index.php","There' some error in tables.You can't use setup to recreate tables. Setup meant to be run only once for security, fix database issues yourself.
