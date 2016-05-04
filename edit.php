@@ -4,7 +4,11 @@ if(!isUserAdmin($_COOKIE["username"])){
     die();
 }
 ?>
-
+<script>
+    function updateMovie(){
+//       todo
+    }
+</script>
 <div class="wrapper" style="margin: 30px;">
     <?php
     if(isset($_POST["action"]) && strcmp($_POST["action"],"Delete")==0){
@@ -51,7 +55,7 @@ if(!isUserAdmin($_COOKIE["username"])){
                     Go Back
                 </button></a></td>
             <td>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" style="background: #4CAF50;" name="action" value="Save">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" style="background: #4CAF50;" name="action" value="Save" onclick="updateMovie()">
                     Save Changes
                 </button>
             </td>

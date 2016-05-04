@@ -26,7 +26,7 @@ include "getters.php";
         $result = $connection->query($query);
         if ($result->num_rows > 0) {
             while($row = $result->fetch_row()){
-                $str .= $row[0] . "<br>";
+                $str .= "<a href='details.php?movie=$row[0]'><h4>" . $row[0] . "</h4></a>";
             }
         }
         return $str;
@@ -252,9 +252,9 @@ include "getters.php";
                     $type = "no";
                 else
                     $type = "yes";
-                echo "<tr><td>$row[0]</td><td>$row[1]</td><td style='width: 200px'>$row[2]</td><td>$row[3]</td><td>$row[4]</td><td>" .
-                    "<input type='button' value='$type' name='$type' onclick=''/>"
-                    . "</td><td>-</td><td>$row[6]</td></tr>";
+                echo "<tr class='movie$row[4]'><td>$row[0]</td><td>$row[1]</td><td style='width: 200px'>$row[2]</td><td>$row[3]</td><td>$row[4]</td><td>" .
+                    "<input id='button$row[4]'type='button' value='$type' name='$type' onclick='publishComment($row[4])'/>"
+                    . "</td><td><input type='button' value='delete' name='delete' onclick='deleteComment($row[4])'></td><td>$row[6]</td></tr>";
             }
         }
     }

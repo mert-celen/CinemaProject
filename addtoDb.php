@@ -34,10 +34,7 @@ VALUES('$Title','$Year','$Runtime','$Genre','$Plot','$Actors','$imdbRating','$Me
     $Actors2 = split(",",$Actors);
 //  delete if directory exist
     if (!file_exists("resources/img/Stars/")) {
-        mkdir("resources/img/Stars/", 700, true);
-    }
-    if(!file_exists("resources/img/$Title")){
-        mkdir("resources/img/$Title/",700,true);
+        mkdir("resources/img/Stars/");
     }
 
     for($i=0;$i<count($Actors2);$i++){
@@ -61,5 +58,6 @@ VALUES('$imdbID','$i',null,TRUE);";
 
     echo "<meta http-equiv='refresh' content='0;url=details.php?movie=" . trim($values[0]) ."''>";
 }else{
+    echo "<meta http-equiv='refresh' content='0;url=index.php'>";
 }
 ?>

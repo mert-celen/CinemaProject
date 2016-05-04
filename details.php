@@ -26,7 +26,8 @@ include "header.php";
 ?>
 <script>
     function addComment(){
-        title = $("#addCommentTitle").val();
+//        title = $("#addCommentTitle").val();
+        title = "disabled";
         text =  $("#addCommentText").val();
         movie_name = $("#movieName").html();
         console.log(title + "," + text + "," + movie_name);
@@ -86,12 +87,12 @@ include "header.php";
                 </table>
                 <table>
                         <th><h2>Comments</h2></th>
-                        <tr><td>Title : </td><td><input id="addCommentTitle" type="text" name="title"></td></tr>
-                        <tr><td>Comment : </td><td><input id="addCommentText" type="text" name="comment"></td></tr>
-                        <tr><td rowspan="2" style="text-align: center"><input type="button" name="addComment" value="Add Comment" onclick="addComment()"></td></tr>
+                        <tr><td rowspan="2"><input id="addCommentText" type="text" name="comment"></td><td rowspan="2" style="text-align: center"><input type="button" name="addComment" value="Add Comment" onclick="addComment()"></td></tr>
+                   <tr>
                     <?php
                         echo getComments($_GET['movie']);
                     ?>
+                   </tr>
                 </table>
                 <br><br>
             </div>

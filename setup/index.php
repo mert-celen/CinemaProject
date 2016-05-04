@@ -1,6 +1,4 @@
 <?php
-chmod("resources/img/", 777);
-chmod("resources/img/Stars", 777);
 chmod("setup/index.php", 777);
 chmod("resources/php/functions.php", 777);
 ob_start();

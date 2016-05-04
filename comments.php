@@ -24,16 +24,33 @@ if(isset($_POST["publishComment"])){
 
 <script>
     function publishComment(commentId){
+        console.log(commentId);
         $.ajax({
                 type: "POST",
                 url: "comments.php",
-                data: { publishComment:yes, commentID:commentId }
+                data: { publishComment:"yes", commentID:commentId }
             })
             .done(function( msg ) {
-                alert(msg);
+//                alert("Action done!");
+                if($("#button" + commentId).attr('value') == "yes"){
+                    $("#button" + commentId).attr('value','no');
+                }else{
+                    $("#button" + commentId).attr('value','yes');
+                }
             });
     };
 
+    function deleteComment(commentId){
+        $.ajax({
+                type: "POST",
+                url: "comments.php",
+                data: { deleteComment:commentId }
+            })
+            .done(function( msg ) {
+                alert("Comment deleted!");
+                $(".movie" + commentId).fadeOut();
+            });
+    };
 </script>
 
 <div style="margin: 30px;">

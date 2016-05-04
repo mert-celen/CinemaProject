@@ -8,7 +8,10 @@
             <td width="400" height="185" style="vertical-align: top"><?php echo getActorDetails($_GET["name"]) . "<br>";?></td>
         </tr>
 
-        <tr><td colspan="2"><?php echo moviesOf($_GET["name"]); ?></td></tr>
+        <tr><td colspan="2">
+                
+            <?php echo moviesOf($_GET["name"]); ?>
+            </td></tr>
     </table>
 
 </div>
