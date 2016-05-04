@@ -1,6 +1,4 @@
 <?php
-chmod("setup/index.php", 777);
-chmod("resources/php/functions.php", 777);
 ob_start();
  if(isset($_POST["writeFile"])){
      $res = "

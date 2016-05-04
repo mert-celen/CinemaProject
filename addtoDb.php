@@ -44,7 +44,7 @@ VALUES('$Title','$Year','$Runtime','$Genre','$Plot','$Actors','$imdbRating','$Me
     }
 //  get movie wallpaper
     $wall_url = getWallpaper($Title);
-    file_put_contents("resources/iwmg/$Title/wall.jpg",file_get_contents($wall_url));
+    file_put_contents("resources/img/$Title/wall.jpg",file_get_contents($wall_url));
 // ticket implementation, disabled.
     if(false){
         $i = 1;
